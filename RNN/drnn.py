@@ -121,15 +121,15 @@ if __name__ == "__main__":
     x,y = dataset()
     print(x.shape)
     print(y.shape)
-    # x_test, y_test = dataset(300000000)
+    x_test, y_test = dataset(300000000)
 
-    # x_test = x_test[2999900:]
-    # y_test = y_test[2999900:]
-    # rnn = RNN(x,y,100, 1)
-    # rnn.train(60,0.001)
-    # rnn.test(x_test, y_test)
-    # plt.tight_layout()
-    # plt.subplot(122)
-    # plt.plot([i for i in range(len(x_test))],y_test,np.array(rnn.outputs).reshape(y_test.shape))
-    # plt.savefig("Prediction from DRNN")
-    # plt.show()
+    x_test = x_test[2999900:]
+    y_test = y_test[2999900:]
+    rnn = RNN(x,y,100, 1)
+    rnn.train(60,0.001)
+    rnn.test(x_test, y_test)
+    plt.tight_layout()
+    plt.subplot(122)
+    plt.plot([i for i in range(len(x_test))],y_test,np.array(rnn.outputs).reshape(y_test.shape))
+    plt.savefig("Prediction from DRNN")
+    plt.show()
