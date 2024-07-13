@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-def dataset(size = 200, timesteps = 25):
+def dataset(size = 200, timesteps = 20):
     x, y = [], []
     sin_wave = np.sin(np.arange(size))
     for step in range(sin_wave.shape[0] - timesteps):
@@ -119,14 +119,17 @@ class RNN:
 
 if __name__ == "__main__":
     x,y = dataset()
-    x_test, y_test = dataset(300000000)
-    x_test = x_test[2999900:]
-    y_test = y_test[2999900:]
-    rnn = RNN(x,y,100, 1)
-    rnn.train(60,0.001)
-    rnn.test(x_test, y_test)
-    plt.tight_layout()
-    plt.subplot(122)
-    plt.plot([i for i in range(len(x_test))],y_test,np.array(rnn.outputs).reshape(y_test.shape))
-    plt.savefig("Prediction from DRNN")
-    plt.show()
+    print(x.shape)
+    print(y.shape)
+    # x_test, y_test = dataset(300000000)
+
+    # x_test = x_test[2999900:]
+    # y_test = y_test[2999900:]
+    # rnn = RNN(x,y,100, 1)
+    # rnn.train(60,0.001)
+    # rnn.test(x_test, y_test)
+    # plt.tight_layout()
+    # plt.subplot(122)
+    # plt.plot([i for i in range(len(x_test))],y_test,np.array(rnn.outputs).reshape(y_test.shape))
+    # plt.savefig("Prediction from DRNN")
+    # plt.show()
