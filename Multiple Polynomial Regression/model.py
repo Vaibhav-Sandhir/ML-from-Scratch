@@ -102,5 +102,5 @@ class MultiplePolynomialRegression:
 
 if __name__ == "__main__":
     model = MultiplePolynomialRegression('train.csv', 'test.csv')
-    model.train(0.01, 300)
+    model.train(0.01, 400)
     model.test()
