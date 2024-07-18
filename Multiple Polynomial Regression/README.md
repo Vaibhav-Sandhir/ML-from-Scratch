@@ -5,8 +5,8 @@
 1. Size of dataset = $( m \times n)$
 2. $m =$ number of training examples
 3. $n =$ number of features
-4. $Y = $ house pirce per unit area
-5. $X = $ feature vector
+4. $Y =$ house pirce per unit area
+5. $X =$ feature vector
    
 ## Model
 
