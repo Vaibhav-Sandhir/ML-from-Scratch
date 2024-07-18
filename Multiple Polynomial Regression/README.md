@@ -7,6 +7,7 @@
 3. $n =$ number of features
 4. $Y =$ house pirce per unit area
 5. $X =$ feature vector
+6. [Dataset from Kaggle](https://www.kaggle.com/datasets/quantbruce/real-estate-price-prediction)
    
 ## Model
 
