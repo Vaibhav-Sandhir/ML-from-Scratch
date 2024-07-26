@@ -29,7 +29,7 @@
 
 ## Loss Function:
 
-$Logistic Loss = -\frac{1}{m} \sum_{i=1}^{m} \space \left( Y^{(i)}\log{\hat{Y}^{(i)}} + (1 - Y^{(i)})\log{(1 - \hat{Y}^{(i)})} \right)
+$Logistic\space Loss = -\frac{1}{m} \space \sum_{i=1}^{m} \space \left( Y^{(i)}\log{\hat{Y}^{(i)}} + (1 - Y^{(i)})\log{(1 - \hat{Y}^{(i)})} \right)
 $ 
 
 ## Training
