@@ -103,5 +103,5 @@ class LogisticRegression():
 
 if __name__ == "__main__":
     model = LogisticRegression("/home/vaibhav/Desktop/AI/Heart Disease Prediction/train.csv", "/home/vaibhav/Desktop/AI/Heart Disease Prediction/test.csv")
-    model.train(0.001, 800)
+    model.train(0.001, 500)
     model.test()

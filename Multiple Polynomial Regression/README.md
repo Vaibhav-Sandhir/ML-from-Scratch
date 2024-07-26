@@ -29,12 +29,12 @@
 | $B$       | $(1 \times 1)$   | Bias |
 
 ## Loss Function
-$MSE: 1/2 \times (\hat{Y} - Y^{(i)})^{2} $
+$MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{Y}^{(i)} - Y^{(i)})^2$
 
 ## Training
 1. For $\text{i} \in \{0, 1, \ldots, n - 1\}$:
    1. $\hat{Y} = W \times X^{T(i)} + B$
-   2. $dW \space += (\hat{Y} - Y^{(i)}) \space * X^{(i)}$
+   2. $dW \space += (\hat{Y} - Y^{(i)}) \space \times X^{(i)}$
    3. $dB \space += (\hat{Y} - Y^{(i)})$
 2. $dW = dW / \space m$
 3. $dB = dB / \space m$
