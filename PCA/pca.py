@@ -5,13 +5,34 @@ def get_mean_matrix(X):
     return U
 
 def get_covariance_matrix(X):
-    U = get_mean_matix(X)
+    U = get_mean_matrix(X)
     X_centered = (X - U)
-    C = (X_centered.T @ X_centered) / (X.shape[0])
+    C = (X_centered.T @ X_centered) / (X.shape[0] - 1)
     return C
 
-def pca(X, reduce_to_dimension):
+def get_top_k_eigen(C, k):
+    eigen_values, eigen_vectors = np.linalg.eigh(C)
+    sorted_index = np.argsort(eigen_values)[::-1]
+    eigen_values = eigen_values[sorted_index]
+    eigen_values = eigen_values[:k]
+    eigen_vectors = eigen_vectors[:, sorted_index]
+    eigen_vectors = eigen_vectors[:, :k]
+    return eigen_values, eigen_vectors
+
+def get_projection_matrix(C, k):
+    eigen_values, eigen_vectors = get_top_k_eigen(C, k)
+    P = eigen_vectors 
+    return P
+
+def pca(X, k):
+    if k > X.shape[1]:
+        raise RuntimeError("Wrong number of reduced dimensions")
     C = get_covariance_matrix(X)
+    P = get_projection_matrix(C, k)
+    U = get_mean_matrix(X)
+    X_pca = (X - U) @ P
+    return X_pca
+
 
 if __name__ == "__main__":
 
@@ -32,3 +53,6 @@ if __name__ == "__main__":
         [62, 48, 35, 21, 14, 77, 88, 59, 40],
         [70, 85, 60, 25, 40, 95, 10, 55, 30]
     ])
+
+    X_pca = pca(X, 3)
+    print(X_pca)
